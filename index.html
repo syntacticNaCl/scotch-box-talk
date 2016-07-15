@@ -1,0 +1,402 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Provisioning A Scotchbox VM</title>
+
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>
+						Provisioning A Scotch Box VM
+					</h1>
+					<img src="img/scotchio.jpg" alt="" style="width: 40%;">
+					<p>
+						<small>
+							by: Garrett Rappaport<br>
+							Software Developer @ Sideways8 Interactive, LLC
+						</small>
+					</p>
+				</section>
+				<section>
+					<h1>whoami</h1>
+					<p>
+						Garrett Rappaport
+					</p>
+					<p>
+						Developer @ Sideways8 Interactive
+					</p>
+					<p>
+						Avid gamer, Musician, Pathfinder Game Master
+					</p>
+					<p>
+						Yes, I am a nerd. Let's move on...
+					</p>
+				</section>
+				<section>
+					<h1>
+						What is Vagrant?
+					</h1>
+					<p>
+						Uses type-2 hypervisors (providers) to build and configure portable
+						and complete development environments.
+					</p>
+					<p>
+						VirtualBox is the default provider
+					</p>
+				</section>
+				<section>
+					<h1>
+						Why Vagrant?
+					</h1>
+					<ul>
+						<li>
+							No more "works on my machine" excuses
+						</li>
+						<li>
+							Standardize development and production
+							environments
+						</li>
+						<li>
+							Easy setup and configuration
+						</li>
+						<li>
+							Share environments with team members
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h1>
+						Important Commands
+					</h1>
+					<ul>
+						<li>
+							vagrant halt (shutdown)
+						</li>
+						<li>
+							vagrant up (boot)
+						</li>
+						<li>
+							vagrant reload (reboot)
+						</li>
+						<li>
+							vagrant status
+						</li>
+						<li>
+							vagrant destroy (delete box)
+						</li>
+						<li>
+							vagrant suspend (pause box)
+						</li>
+						<li>
+							vagrant ssh
+						</li>
+						<li>
+							vagrant box outdated 
+						</li>
+						<li>
+							vagrant box update
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h1>
+						What is Scotch Box?
+					</h1>
+					<p>
+						Preconfigured vagrant box with a full array of LAMP
+						stack features.
+					</p>
+				</section>
+				<section>
+					<h1> 
+						Why Scotch Box?
+					</h1>
+					<ul>
+						<li>
+							Quick setup
+						</li>
+						<li>
+							Easy configuration
+						</li>
+						<li>
+							When you need a quick and easy dev environment
+						</li>
+					</ul>
+				</section>
+				<section>
+					<section>
+						<h1>What's Included</h1>
+
+						<p>
+							Scotch Box Features:
+						<a href="https://box.scotch.io/"
+							target="_blank">https://box.scotch.io/</a>
+						</p>
+					</section>
+					<section>
+						<h1>
+							Server Stuff
+						</h1>
+						<ul>
+							<li>
+								Ubuntu 14.04 LTS (Trusty Tahr)
+							</li>
+							<li>
+								PHP 5.6
+							</li>
+							<li>
+								Ruby 2.2.x
+							</li>
+							<li>
+								VIM
+							</li>
+							<li>
+								Git
+							</li>
+							<li>
+								cURL
+							</li>
+							<li>
+								Composer
+							</li>
+							<li>
+								Node
+							</li>
+							<li>
+								NPM
+							</li>
+							<li>
+								Mcrypt
+							</li>
+						</ul>
+					</section>
+					<section>
+						<h1>
+							Database Stuff
+						</h1>
+						<ul>
+							<li>
+								MySQL
+							</li>
+							<li>
+								PostgreSQL
+							</li>
+							<li>
+								SQLite
+							</li>
+							<li>
+								MongoDB
+							</li>
+						</ul>
+					</section>
+					<section>
+						<h1>
+							Caching Stuff
+						</h1>
+						<ul>
+							<li>
+								Redis
+							</li>
+							<li>
+								Memcache and Memcached
+							</li>
+						</ul>
+					</section>
+					<section>
+						<h1>
+							Node Stuff
+						</h1>
+						<ul>
+							<li>
+								Grunt 
+							</li>
+							<li> 
+								Bower 
+							</li>
+							<li>
+								Gulp
+							</li>
+							<li>
+								Yeoman
+							</li>
+							<li>
+								Browsersync
+							</li>
+							<li>
+								PM2
+							</li>
+						</ul>
+					</section>
+					<section>
+						<h1>
+							Need More?
+						</h1>
+						<p>
+							Provisioning is your answer.
+						</p>
+					</section>
+				</section>
+				<section>
+					<h1>
+						What are provisioner scripts?
+					</h1>
+					<p>
+						Scripts that can be run for setup and configuration.
+					</p>
+					<p>
+						To provision:
+					</p>
+					<ul>
+						<li>
+							Add --provision flag to an up or reload command.
+						</li>
+						<li>
+							Provision while box is running: vagrant provision
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h1>How It Works</h1>
+					<p>
+						Install VirtualBox or another provider (VMWare, Docker,
+						etc)
+					</p>
+					<p>
+						Install Vagrant
+					</p>
+					<p>
+						Clone Scotch Box
+					</p>
+					<p>
+						Run vagrant up
+					</p>
+					<p>
+						Browse to IP (http://192.168.33.10/ by default)
+					</p>
+				</section>
+				<section>
+					<h1>
+						Command Line Time
+					</h1>
+				</section>
+				<section>
+					<h1>
+						Other Options
+					</h1>
+					<ul class="no-list" style="text-align: center;">
+						<img src="img/chef-sp.jpg" alt="" style="width: 50%; ">
+						<li>
+							<a href="https://www.chef.io/">Chef</a>
+						</li>
+						<li>
+							<a href="https://puppet.com/">Puppet</a>
+						</li>
+						<li>
+							<a href="https://puphpet.com/">PuPHPet</a>
+						</li>
+						<li>
+							<a
+								href="https://github.com/Varying-Vagrant-Vagrants/VVV">
+								Varying Vagrant Vagrants (Wordpress folks)
+							</a>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h1>
+						Important Links
+					</h1>
+					<ul>
+						<li>
+							VirtualBox: 
+							<a
+								href="https://www.virtualbox.org/">https://www.virtualbox.org/</a>
+						</li>
+						<li>
+							Vagrant:
+							<a
+								href="https://www.vagrantup.com/">https://www.vagrantup.com/</a>
+						</li>
+						<li>
+							Scotch Box Github:
+							<a
+								href="https://github.com/scotch-io/scotch-box">https://github.com/scotch-io/scotch-box</a>
+						</li>
+						<li>
+							ScotchBox.io:
+							<a
+								href="https://box.scotch.io/">https://box.scotch.io/</a>
+						</li>
+						<li>
+							Scotch Box 2.0 tips:
+							<a
+								href="https://scotch.io/bar-talk/announcing-scotch-box-2-0-our-dead-simple-vagrant-lamp-stack-improved">https://scotch.io/bar-talk/announcing-scotch-box-2-0-our-dead-simple-vagrant-lamp-stack-improved</a>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h1>Questions?</h1>
+					<img src="img/cat-whiskey.jpg" alt="Scotch Cat"
+					style="width:80%;">
+				</section>
+				<section>
+					<h1>Thanks!!</h1>
+					<p>
+						<i class="fa fa-github"></i>
+						github.com/syntacticNaCl
+					</p>
+					<p>
+
+						<i class="fa fa-twitter"></i>
+						@syntacticNaCl
+					</p>
+					<p>
+
+						<i class="fa fa-hashtag"></i>
+						Freenode IRC: syntacticNaCl
+					</p>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			history: true,
+
+			// More info https://github.com/hakimel/reveal.js#dependencies
+			dependencies: [
+				{ src: 'plugin/markdown/marked.js' },
+				{ src: 'plugin/markdown/markdown.js' },
+				{ src: 'plugin/notes/notes.js', async: true },
+				{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+			]
+		});
+		</script>
+	</body>
+</html>
